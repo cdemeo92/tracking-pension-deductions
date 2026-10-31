@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deducibilità fondo pensione</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5f4;--card:#fff;--ink:#16211d;--mut:#5d6b65;--line:#d9e0dc;--acc:#1f5f4a;--acc2:#e8f1ed;--warn:#9a4a12;--warn2:#fbeee2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121916;--card:#1b2420;--ink:#e6eeea;--mut:#9aaba3;--line:#2c3933;--acc:#6fc4a4;--acc2:#213a30;--warn:#f0a468;--warn2:#3a2a1c}}
+:root[data-theme="dark"]{--bg:#121916;--card:#1b2420;--ink:#e6eeea;--mut:#9aaba3;--line:#2c3933;--acc:#6fc4a4;--acc2:#213a30;--warn:#f0a468;--warn2:#3a2a1c}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "IBM Plex Sans",system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:920px;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:24px;margin:0 0 4px;font-weight:600}
+h2{font-size:16px;margin:0 0 12px;font-weight:600}
+p.sub{margin:0 0 12px;color:var(--mut)}
+.privacy{background:var(--warn2);border:1px solid var(--warn);color:var(--warn);border-radius:8px;padding:8px 12px;font-size:13px;margin-bottom:16px}
+section{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.kpi{border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.kpi span{display:block;color:var(--mut);font-size:13px}
+.kpi b{font-size:22px;font-variant-numeric:tabular-nums;font-weight:600}
+.kpi.main{background:var(--acc2);border-color:var(--acc)}.kpi.main b{color:var(--acc)}
+.kpi.over{background:var(--warn2);border-color:var(--warn)}.kpi.over b{color:var(--warn)}
+.bar{height:12px;background:var(--line);border-radius:6px;overflow:hidden;display:flex;margin:14px 0 6px}
+.bar i{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;color:var(--mut)}
+.legend em{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;font-style:normal}
+label{display:block;font-size:13px;color:var(--mut);margin-bottom:3px}
+input[type=number],input[type=text],select{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:7px 8px;font-variant-numeric:tabular-nums}
+input:focus-visible,select:focus-visible,button:focus-visible,.drop:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.row{display:flex;gap:8px;align-items:end;margin-bottom:8px}.row>div{flex:1}
+button{font:inherit;cursor:pointer;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 12px}
+button.primary{background:var(--acc);border-color:var(--acc);color:var(--bg);font-weight:500}
+button.primary:disabled{opacity:.5;cursor:default}
+button.icon{padding:7px 10px;color:var(--mut)}
+.drop{border:1.5px dashed var(--acc);border-radius:8px;padding:18px;text-align:center;cursor:pointer;background:var(--acc2)}
+.drop.active{background:var(--card)}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;min-width:520px}
+th,td{padding:6px 8px;text-align:right;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+th{font-weight:500;color:var(--mut);font-size:13px}
+td input{text-align:right;padding:4px 6px}
+tr.estimate td{color:var(--mut);font-style:italic}
+tfoot td{font-weight:600}
+.note{font-size:13px;color:var(--mut);margin-top:8px}
+ul.log{margin:8px 0 0;padding-left:18px;font-size:13px}
+ul.log li.error{color:var(--warn)}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.save-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.hint{background:var(--acc2);border-radius:8px;padding:8px 12px;font-size:13px;margin-top:10px}
+</style>
+</head>
+<body>
+<main>
+<h1>Deducibilità fondo pensione</h1>
+<p class="sub">Quanto hai versato e quanto puoi ancora dedurre nell'anno. TFR escluso.</p>
+<div class="privacy">I dati sono scritti in questa pagina. Se la condividi, chi la apre vede le tue cifre.</div>
+
+<section aria-label="Riepilogo">
+ <div class="grid" id="kpis"></div>
+ <div class="bar" id="bar"></div>
+ <div class="legend" id="legend"></div>
+ <div class="hint" id="hint" hidden>Per vedere la stima dei mesi futuri imposta aliquota e retribuzione mensile nei parametri.</div>
+</section>
+
+<section>
+ <h2>Buste paga</h2>
+ <div class="drop" id="drop" tabindex="0" role="button">Trascina qui i PDF delle buste paga o clicca per sceglierli</div>
+ <input type="file" id="fileInput" accept="application/pdf" multiple hidden>
+ <ul class="log" id="log"></ul>
+ <div class="table-wrap" style="margin-top:12px"><table id="monthsTable"></table></div>
+ <div class="row" style="margin-top:12px">
+  <div><label for="newMonth">Aggiungi un mese a mano</label><select id="newMonth"></select></div>
+  <button id="addMonth">Aggiungi</button>
+ </div>
+</section>
+
+<section>
+ <h2>Versamenti volontari</h2>
+ <div id="voluntary"></div>
+ <button id="addVoluntary">Aggiungi versamento</button>
+</section>
+
+<section>
+ <h2>Parametri</h2>
+ <div class="three">
+  <div><label for="year">Anno</label><input type="number" id="year" step="1"></div>
+  <div><label for="limit">Limite annuo (€)</label><input type="number" id="limit" step="0.01"></div>
+  <div><label for="rate">Aliquota totale tu + datore (%)</label><input type="number" id="rate" step="0.01"></div>
+  <div><label for="base">Retribuzione mensile utile (€)</label><input type="number" id="base" step="0.01"></div>
+  <div><label for="bonus14">14ª di giugno (€)</label><input type="number" id="bonus14" step="0.01"></div>
+  <div><label for="bonus13">13ª di dicembre (€)</label><input type="number" id="bonus13" step="0.01"></div>
+ </div>
+ <div class="note">La stima copre i mesi dopo l'ultima busta in tabella, fino a dicembre: (retribuzione + 14ª a giugno + 13ª a dicembre) × aliquota.</div>
+</section>
+
+<section>
+ <h2>Salvataggio</h2>
+ <div class="save-row">
+  <button class="primary" id="saveBtn" disabled>Salva</button>
+  <button id="copyBtn">Copia dati</button>
+  <span class="note" id="saveMsg" style="margin:0">Nessuna modifica da salvare.</span>
+ </div>
+</section>
+</main>
+
+<!-- State block: the skill reads and rewrites this JSON. Keep the id and the single-line format. -->
+<script type="application/json" id="state">{"version":1,"year":2026,"limit":5300,"rate":0,"base":0,"bonus13":0,"bonus14":0,"months":{},"voluntary":[]}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"></script>
+<script type="module" src="./src/main.ts"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "verbatimModuleSyntax": true,
+    "types": ["vitest/globals", "node"]
+  },
+  "include": ["assets/src/**/*.ts", "tests/frontend/**/*.test.ts"]
+}

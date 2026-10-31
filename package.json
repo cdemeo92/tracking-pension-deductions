@@ -1,0 +1,40 @@
+{
+  "name": "tracking-pension-deductions",
+  "version": "1.0.0",
+  "description": "Small Python utilities and a self-contained HTML tracker for Italian supplementary pension contributions.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.2"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.test.json",
+    "lint": "eslint eslint.config.js assets/src tests/frontend vite.config.ts vitest.config.ts && npm run typecheck && uv run --no-sync --locked ruff check scripts tests",
+    "release": "semantic-release",
+    "test:frontend": "vitest run",
+    "test:frontend:unit": "vitest run --exclude tests/frontend/build.test.ts",
+    "test:frontend:build": "vitest run tests/frontend/build.test.ts",
+    "test:python": "python3 -m unittest discover -v",
+    "test": "npm run build && npm run typecheck && npm run test:frontend && npm run test:python"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@semantic-release/changelog": "^7.0.0",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/exec": "^7.1.0",
+    "@semantic-release/git": "^11.0.1",
+    "@semantic-release/github": "^12.0.10",
+    "@semantic-release/release-notes-generator": "^14.1.1",
+    "@types/node": "^26.6.5",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "jsdom": "^29.1.1",
+    "semantic-release": "^25.0.9",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^8.3.5",
+    "vite-plugin-singlefile": "^2.3.4",
+    "vitest": "^4.1.12"
+  }
+}
