@@ -11,12 +11,18 @@ Ask Claude to set up, update, or review your contributions. You receive a report
 - **Zucchetti payslips:** A script extracts the contribution amounts from the payslip, so no AI tokens are used to read it. Claude shows you the results for confirmation.
 - **Other payslips:** Claude reads the contribution amounts from other payslips and asks you to confirm them before updating the tracker.
 
-#### Privacy 
+#### Privacy
+
 The tracker stores contribution figures, not personal identifiers. Anyone with the Artifact link can view those figures, so share it only with people you trust.
 
 ## Download and install
 
-Download `tracking-pension-deductions-skill.zip` from the [latest release](https://github.com/cdemeo92/tracking-pension-deductions/releases). In Claude.ai, enable **Code execution and file creation** under **Settings → Capabilities**, then open [Customize → Skills](https://claude.ai/customize/skills), select **+ → + Create skill → Upload a skill**, and upload the ZIP. Enable the skill from your skills list.
+1. **Download:** Get `tracking-pension-deductions-skill.zip` from the [latest release](https://github.com/cdemeo92/tracking-pension-deductions/releases).
+2. **Enable file creation:** In Claude settings, open **Features** and turn on **Create and edit files**.
+3. **Upload:** In Claude.ai, open [Customize → Skills](https://claude.ai/customize/skills), select **+ Add → Upload a skill**, and choose the ZIP.
+4. **Activate:** Turn on the skill in your skills list.
+
+See Anthropic's [user guide to using Skills](https://support.claude.com/en/articles/12512180-use-skills-in-claude) for specific instructions and troubleshooting.
 
 ## Project structure
 
