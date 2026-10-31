@@ -1,0 +1,42 @@
+# Python bytecode and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+
+# Generated single-file tracker and Python packaging outputs
+/dist/
+build/
+*.egg-info/
+.eggs/
+
+# Test and analysis caches
+.pytest_cache/
+.vitest/
+coverage/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Node.js dependencies and logs
+node_modules/
+npm-debug.log*
+
+# Local secrets and environment overrides
+.env
+.env.*
+!.env.example
+
+# Local payslips, financial data, and generated outputs
+/local-data/
+/personal-data/
+/outputs/
+
+# Operating system files
+.DS_Store
+Thumbs.db
