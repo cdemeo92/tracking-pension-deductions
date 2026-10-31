@@ -2,15 +2,21 @@
 
 This project contains a Claude skill and a single-page tracker for Italian supplementary pension contributions. The tracker records voluntary payments and employee/employer contributions, compares them with the annual deduction limit, and estimates contributions through year-end.
 
-## For users
+## Using the skill
 
-Add the project as a skill in Claude.ai, including its bundled files. Ask Claude to create, check, update, or reset the tracker. The tracker is an HTML Artifact: its page contains the saved figures, so anyone who can open its link can see them. Do not store names, tax codes, employer details, or bank information in the page.
+Ask Claude to set up, update, or review your contributions. You receive a report showing contributions to date, how much of the annual limit remains, and an estimate through year-end, together with an HTML Artifact that keeps your figures for future chats.
 
-Zucchetti payslips can be processed automatically. Claude presents the extracted amounts for confirmation before adding them. Other payslip formats require manual extraction and confirmation. TFR is excluded. The tracker is an estimate, not tax advice.
+### Capabilities
+
+- **Zucchetti payslips:** A script extracts the contribution amounts from the payslip, so no AI tokens are used to read it. Claude shows you the results for confirmation.
+- **Other payslips:** Claude reads the contribution amounts from other payslips and asks you to confirm them before updating the tracker.
+
+#### Privacy 
+The tracker stores contribution figures, not personal identifiers. Anyone with the Artifact link can view those figures, so share it only with people you trust.
 
 ## Download and install
 
-Download `tracking-pension-deductions-skill.zip` from the [latest GitHub release](https://github.com/cdemeo92/tracking-pension-deductions/releases). In Claude.ai, enable **Code execution and file creation** under **Settings → Capabilities**, then open [Customize → Skills](https://claude.ai/customize/skills), select **+ → + Create skill → Upload a skill**, and upload the ZIP. Enable the skill from your skills list.
+Download `tracking-pension-deductions-skill.zip` from the [latest release](https://github.com/cdemeo92/tracking-pension-deductions/releases). In Claude.ai, enable **Code execution and file creation** under **Settings → Capabilities**, then open [Customize → Skills](https://claude.ai/customize/skills), select **+ → + Create skill → Upload a skill**, and upload the ZIP. Enable the skill from your skills list.
 
 ## Project structure
 
