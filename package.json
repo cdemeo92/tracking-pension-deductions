@@ -1,6 +1,6 @@
 {
   "name": "tracking-pension-deductions",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Small Python utilities and a self-contained HTML tracker for Italian supplementary pension contributions.",
   "type": "module",
   "engines": {
