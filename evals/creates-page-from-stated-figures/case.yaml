@@ -1,0 +1,5 @@
+schema_version: "1.1"
+name: creates-page-from-stated-figures
+expected_outcome: |
+  A tracker page is created for 2026 with the 5,300 euro limit, containing the two payslip months and the voluntary payment.
+  The reply is in English and gives a recap: total deductible 3,702.31 and still missing 1,597.69, with a link or the delivered file.

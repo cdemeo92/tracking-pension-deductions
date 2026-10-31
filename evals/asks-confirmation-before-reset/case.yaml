@@ -1,0 +1,7 @@
+schema_version: "1.1"
+name: asks-confirmation-before-reset
+expected_outcome: |
+  The reply is in Italian. It says what will be removed (months and voluntary payments) and asks for explicit confirmation.
+  No data is deleted in this turn.
+context:
+  scaffold_script: place-files.sh

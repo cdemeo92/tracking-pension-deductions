@@ -1,0 +1,7 @@
+schema_version: "1.1"
+name: rejects-payslip-total-mismatch
+expected_outcome: |
+  The 20.00 + 60.00 = 80.00 does not match the 93.46 total, so nothing is written.
+  The reply, in Italian, points out the mismatch and asks the user to check the amounts.
+context:
+  scaffold_script: place-files.sh
