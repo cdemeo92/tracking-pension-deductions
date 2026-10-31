@@ -4,7 +4,7 @@
   "description": "Small Python utilities and a self-contained HTML tracker for Italian supplementary pension contributions.",
   "type": "module",
   "engines": {
-    "node": ">=22.22.2"
+    "node": ">=26.13.0"
   },
   "scripts": {
     "dev": "vite --host 127.0.0.1",
@@ -31,7 +31,7 @@
     "globals": "^17.13.0",
     "jsdom": "^30.1.3",
     "semantic-release": "^25.0.9",
-    "typescript": "~7.0.2",
+    "typescript": "^6.0.3",
     "typescript-eslint": "^8.72.1",
     "vite": "^8.3.5",
     "vite-plugin-singlefile": "^2.3.4",
