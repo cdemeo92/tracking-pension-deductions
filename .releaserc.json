@@ -33,7 +33,7 @@
         "assets": [
           {
             "path": "dist/tracking-pension-deductions-skill.zip",
-            "label": "Claude skill ZIP"
+            "label": "Tracking Pension Deductions Skill"
           }
         ]
       }
