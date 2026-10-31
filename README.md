@@ -25,10 +25,18 @@ tracking-pension-deductions/
 
 ## Requirements
 
-- Node.js 22.22.2 or later and npm
+- Node.js 26 or later and npm
 - Make and the `zip` utility to create the Claude skill archive
 - Python 3.10 or later
 - `uv` for the optional `pdfplumber` fallback; Poppler's `pdftotext` utility is recommended for PDF extraction.
+
+Run `asdf install` to install those versions. If either plugin is missing, add it first:
+
+```sh
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin add python https://github.com/asdf-community/asdf-python.git
+asdf install
+```
 
 On macOS, install the optional tools with `brew install uv poppler`.
 
