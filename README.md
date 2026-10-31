@@ -8,6 +8,10 @@ Add the project as a skill in Claude.ai, including its bundled files. Ask Claude
 
 Zucchetti payslips can be processed automatically. Claude presents the extracted amounts for confirmation before adding them. Other payslip formats require manual extraction and confirmation. TFR is excluded. The tracker is an estimate, not tax advice.
 
+## Download and install
+
+Download `tracking-pension-deductions-skill.zip` from the [latest GitHub release](https://github.com/cdemeo92/tracking-pension-deductions/releases). In Claude.ai, enable **Code execution and file creation** under **Settings → Capabilities**, then open [Customize → Skills](https://claude.ai/customize/skills), select **+ → + Create skill → Upload a skill**, and upload the ZIP. Enable the skill from your skills list.
+
 ## Project structure
 
 ```text
@@ -50,21 +54,17 @@ npm run build
 
 The build creates the standalone tracker at `dist/template.html`. The generated `dist/` directory is ignored by Git.
 
-## Package and install the Claude skill
+## Create the Claude skill ZIP manually
 
-Download or clone this project, then run:
+From the project root, run:
 
 ```sh
-npm ci
+npm i
 npm run build
 make package-skill
 ```
 
-Build the tracker before packaging it. `make package-skill` only creates `dist/tracking-pension-deductions-skill.zip` from the existing build; it does not rebuild or run tests. Use `npm test` separately when you want to validate changes. The ZIP packages only the skill instructions, runtime Python scripts, references, license, and generated HTML.
-
-The ZIP contains a top-level `tracking-pension-deductions/` folder, as required by Claude. Tests and development sources are excluded.
-
-In Claude.ai, enable **Code execution and file creation** under **Settings → Capabilities**. Then open [Customize → Skills](https://claude.ai/customize/skills), select **+ → + Create skill → Upload a skill**, and upload `dist/tracking-pension-deductions-skill.zip`. Enable the skill from your skills list. Team and Enterprise organizations may require an administrator to enable Skills and code execution. See Anthropic's current [guide to using skills](https://support.claude.com/en/articles/12512180-use-skills-in-claude) and [custom skill guide](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills) for details.
+`make package-skill` creates `dist/tracking-pension-deductions-skill.zip` from the existing `dist/template.html`. The ZIP contains the skill instructions, runtime Python scripts, references, license, and generated HTML in a top-level `tracking-pension-deductions/` folder.
 
 ## Run and modify
 
