@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/cdemeo92/tracking-pension-deductions/compare/v1.0.0...v1.0.1) (2026-10-31)
+
+
+### Bug Fixes
+
+* update label for skill ZIP in release configuration ([9c4a388](https://github.com/cdemeo92/tracking-pension-deductions/commit/9c4a388507a883005831eb65efc98ff2f8c38042))
+
 # 1.0.0 (2026-10-31)
 
 
