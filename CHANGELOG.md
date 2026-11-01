@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/cdemeo92/tracking-pension-deductions/compare/v1.0.2...v1.0.3) (2026-11-01)
+
+
+### Bug Fixes
+
+* update dependencies ([f2268c0](https://github.com/cdemeo92/tracking-pension-deductions/commit/f2268c09cc9efa7935add84f3f6cd1d01b79b007))
+
 ## [1.0.2](https://github.com/cdemeo92/tracking-pension-deductions/compare/v1.0.1...v1.0.2) (2026-11-01)
 
 
