@@ -6,7 +6,7 @@ SKILL_ZIP := $(abspath dist/$(SKILL_NAME)-skill.zip)
 
 package-skill:
 	mkdir -p $(SKILL_DIR)/scripts $(SKILL_DIR)/references $(SKILL_DIR)/dist
-	cp SKILL.md LICENSE $(SKILL_DIR)/
+	cp SKILL.md $(SKILL_DIR)/
 	cp scripts/*.py $(SKILL_DIR)/scripts/
 	cp references/*.md $(SKILL_DIR)/references/
 	cp dist/template.html $(SKILL_DIR)/dist/

@@ -76,7 +76,7 @@ npm run build
 make package-skill
 ```
 
-`make package-skill` creates `dist/tracking-pension-deductions-skill.zip` from the existing `dist/template.html`. The ZIP contains the skill instructions, runtime Python scripts, references, license, and generated HTML in a top-level `tracking-pension-deductions/` folder.
+`make package-skill` creates `dist/tracking-pension-deductions-skill.zip` from the existing `dist/template.html`. The ZIP contains the skill instructions, runtime Python scripts, references, and generated HTML in a top-level `tracking-pension-deductions/` folder.
 
 ## Run and modify
 
