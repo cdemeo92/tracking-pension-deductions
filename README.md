@@ -43,7 +43,7 @@ tracking-pension-deductions/
 
 - Node.js 26 or later and npm
 - Make and the `zip` utility to create the Claude skill archive
-- Python 3.10 or later
+- Python 3.13 or later
 - `uv` for the optional `pdfplumber` fallback; Poppler's `pdftotext` utility is recommended for PDF extraction.
 
 Run `asdf install` to install those versions. If either plugin is missing, add it first:
