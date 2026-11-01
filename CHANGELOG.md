@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/cdemeo92/tracking-pension-deductions/compare/v1.0.1...v1.0.2) (2026-11-01)
+
+
+### Bug Fixes
+
+* fix pyllow vulnerability ([5a0d9c6](https://github.com/cdemeo92/tracking-pension-deductions/commit/5a0d9c6875d29994f5094666e4942206a3800bff))
+
 ## [1.0.1](https://github.com/cdemeo92/tracking-pension-deductions/compare/v1.0.0...v1.0.1) (2026-10-31)
 
 
