@@ -1,5 +1,11 @@
 # Tracking pension deductions
 
+[![CI](https://github.com/cdemeo92/tracking-pension-deductions/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/cdemeo92/tracking-pension-deductions/actions/workflows/ci.yml)
+[![Latest release](https://img.shields.io/github/v/release/cdemeo92/tracking-pension-deductions)](https://github.com/cdemeo92/tracking-pension-deductions/releases/latest)
+[![License](https://img.shields.io/github/license/cdemeo92/tracking-pension-deductions)](LICENSE)
+[![Semantic Release](https://img.shields.io/badge/semantic--release-enabled-e10079)](https://semantic-release.gitbook.io/semantic-release/)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://www.conventionalcommits.org/en/v1.0.0/)
+
 This project contains a Claude skill and a single-page tracker for Italian supplementary pension contributions. The tracker records voluntary payments and employee/employer contributions, compares them with the annual deduction limit, and estimates contributions through year-end.
 
 ## Using the skill
