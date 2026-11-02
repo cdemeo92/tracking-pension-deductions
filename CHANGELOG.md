@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/cdemeo92/tracking-pension-deductions/compare/v1.0.3...v1.0.4) (2026-11-02)
+
+
+### Bug Fixes
+
+* update TypeScript version ([4140c62](https://github.com/cdemeo92/tracking-pension-deductions/commit/4140c62a1540600faa2c6ebfe09aef0c979634ad))
+
 ## [1.0.3](https://github.com/cdemeo92/tracking-pension-deductions/compare/v1.0.2...v1.0.3) (2026-11-01)
 
 
