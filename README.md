@@ -23,12 +23,14 @@ The tracker stores contribution figures, not personal identifiers. Anyone with t
 
 ## Download and install
 
-1. **Download:** Get `tracking-pension-deductions-skill.zip` from the [latest release](https://github.com/cdemeo92/tracking-pension-deductions/releases).
+1. **Download:** [Download the latest skill ZIP](https://github.com/cdemeo92/tracking-pension-deductions/releases/latest/download/tracking-pension-deductions-skill.zip).
 2. **Enable file creation:** In Claude settings, open **Features** and turn on **Create and edit files**.
 3. **Upload:** In Claude.ai, open [Customize → Skills](https://claude.ai/customize/skills), select **+ Add → Upload a skill**, and choose the ZIP.
 4. **Activate:** Turn on the skill in your skills list.
 
 See Anthropic's [user guide to using Skills](https://support.claude.com/en/articles/12512180-use-skills-in-claude) for specific instructions and troubleshooting.
+
+[Browse previous releases](https://github.com/cdemeo92/tracking-pension-deductions/releases).
 
 ## Project structure
 
