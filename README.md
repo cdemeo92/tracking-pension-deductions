@@ -8,6 +8,24 @@
 
 This project contains a Claude skill and a single-page tracker for Italian supplementary pension contributions. The tracker records voluntary payments and employee/employer contributions, compares them with the annual deduction limit, and estimates contributions through year-end.
 
+## Table of contents
+
+- [Why this exists](#why-this-exists)
+- [Using the skill](#using-the-skill)
+  - [Capabilities](#capabilities)
+  - [Privacy](#privacy)
+- [Download and install](#download-and-install)
+- [Project structure](#project-structure)
+- [Requirements](#requirements)
+- [Install and build](#install-and-build)
+- [Create the Claude skill ZIP manually](#create-the-claude-skill-zip-manually)
+- [Run and modify](#run-and-modify)
+- [Test](#test)
+
+## Why this exists
+
+Managing Italian supplementary pension contributions (Previdenza Complementare) is prone to error, especially when tracking the annual €5,300.00 deduction limit across multiple payslips and voluntary payments. This skill brings those amounts together to track how much of the limit has been used and estimate year-end contributions. A local script extracts figures from Zucchetti payslips; for other formats, Claude reads the payslip and asks you to confirm the figures before updating the persistent, client-side dashboard.
+
 ## Using the skill
 
 Ask Claude to set up, update, or review your contributions. You receive a report showing contributions to date, how much of the annual limit remains, and an estimate through year-end, together with an HTML Artifact that keeps your figures for future chats.
@@ -17,7 +35,7 @@ Ask Claude to set up, update, or review your contributions. You receive a report
 - **Zucchetti payslips:** A script extracts the contribution amounts from the payslip, so no AI tokens are used to read it. Claude shows you the results for confirmation.
 - **Other payslips:** Claude reads the contribution amounts from other payslips and asks you to confirm them before updating the tracker.
 
-#### Privacy
+### Privacy
 
 The tracker stores contribution figures, not personal identifiers. Anyone with the Artifact link can view those figures, so share it only with people you trust.
 
